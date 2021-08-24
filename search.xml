@@ -18,4 +18,79 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>git的master和main</title>
+    <url>/2021/08/23/git%E7%9A%84master%E5%92%8Cmain/</url>
+    <content><![CDATA[<blockquote>
+<p>“Black Lives Matter”运动愈演愈烈，继 IBM 、亚马逊、微软等科技公司之后，GitHub 方面也表示，该公司正在努力以 “main”之类的中性术语替换其服务上的 “master”一词，以避免不必要的奴隶制联想。</p>
+</blockquote>
+<span id="more"></span>
+<p>最近用git上传文件，感觉这种替换让用户体验直接崩溃，git软件并没有同步设置，导致上传后直接创建了master，很尴尬的是，git主要点是main，这就导致我上传的文件不起作用，就在我正在打字的过程中，vscode显示的还是master，然而我编写的内容是要推送到main。。。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo sidebar 404问题</title>
+    <url>/2021/07/28/hexo-sidebar-404%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>我们搭建完博客，使用next主题并配置好菜单栏的时候，点击日志会发现页面404</p>
+<span id="more"></span>
+<p>（404就是找不到该页面的报错）<br>我们查看网页浏览器的链接，发现该链接不正确，其实是Next主题的一个bug，我们需要修改一下源代码。<br>步骤如下：<br>1、找到源文件#<br>首先我们找到代码文件，目录为你的博客目录/themes/next/layout/_macro/sidebar.swig。<br>2、找到代码块#<br>找到&lt;a href=”url_for(theme.menu.archives).split(‘||’)[0] | trim “&gt;注释掉<br>然后回车再下面添加一行红色箭头的代码&lt;a href=”<a href="https://myblog.github.io/archives/&quot;">https://myblog.github.io/archives/&quot;</a> target=”_Self”&gt;，<br>修改完成后别忘了保存~~~保存后，运行以下命令<br>hexo clean<br>hexo d -g<br>最后清除一下浏览器缓存，再进你的博客时，发现日志POST页面可以成功访问了~~~</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo调试日志</title>
+    <url>/2021/07/28/hexo%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h3 id="去除无用搜索按键"><a href="#去除无用搜索按键" class="headerlink" title="去除无用搜索按键"></a>去除无用搜索按键</h3><p>直接将主题文件C:\Users\Administrator\Documents\MyWeb\hexo\themes\landscape\layout_partial\header.ejs中的代码注释掉即可<br>        <!--<a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>"></a>--></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo出现spawn failed问题</title>
+    <url>/2021/07/27/hexo%E5%87%BA%E7%8E%B0spawn-failed%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>问题描述：<br>先是出现错误：<br>error：spawn failed…<br>然后经过一些博客的操作会出现以下问题：<br>fatal: cannot lock ref ‘HEAD’: unable to resolve reference HEAD: Invalid argument error: src refspec<br>或者：<br>error: src refspec HEAD does not match any.等等<br>总结一下：<br>问题大多是因为git进行push或者hexo d的时候改变了一些.deploy_git文件下的内容。</p>
+<span id="more"></span>
+<p>解决办法：<br>删除.deploy_git文件夹;<br>输入git config –global core.autocrlf false<br>然后，依次执行：</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d<br>问题解决。暴力直接，有效。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo部署出现分支错误</title>
+    <url>/2021/08/23/hexo%E9%83%A8%E7%BD%B2%E5%87%BA%E7%8E%B0%E5%88%86%E6%94%AF%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<p>ssh密钥问题</p>
+<span id="more"></span>
+<p>输入git remote set-url origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:名字/仓库名.git 命令后解决了</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用本地面板进行网站搭建</title>
+    <url>/2021/08/10/%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E9%9D%A2%E6%9D%BF%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h3 id="使用电脑搭建网站，不受限虚拟主机"><a href="#使用电脑搭建网站，不受限虚拟主机" class="headerlink" title="使用电脑搭建网站，不受限虚拟主机"></a>使用电脑搭建网站，不受限虚拟主机</h3><blockquote>
+<p>本人最近一直使用的是虚拟主机进行网站搭建，一旦遇到虚拟主机出现问题，网站就直接出现数据丢失，尽管经常备份，但仍然出现数据丢失的情况，所以我想直接用本地搭建的方法，在个人笔记本电脑上先搭建一个，再对数据进行同步，同时用坚果云进行多设备同步，可以更好的解决换设备的问题</p>
+</blockquote>
+<span id="more"></span>
+<p>主要同步的目录有<br>C:\phpstudy_pro\Extensions\MySQL5.7.26\data<br>C:\phpstudy_pro\WWW</p>
+]]></content>
+      <tags>
+        <tag>web 服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>刷子游戏</title>
+    <url>/2021/08/23/%E5%88%B7%E5%AD%90%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<blockquote>
+<p>最近无事，沉迷游戏，然后开始了刷刷刷游戏，作为买买买的steam剁手党，仓库里面还是有很多游戏的，但都没怎么玩，毕竟本着都花钱买了就不会玩的心态，很多游戏压根就没怎么玩过</p>
+</blockquote>
+<span id="more"></span>
+<p>先来说下最近几天玩的游戏吧，</p>
+<ol>
+<li>传说法师</li>
+</ol>
+<p>肉鸽游戏，顺带刷刷刷，类似死亡细胞，因为我先玩死亡细胞，所以对传法的游戏剧情不是很感冒，整个流程很快，全程下来39分钟左右（老修改器了），俯视角感觉不太适合我，这可能也是我玩不来火炬之光2的原因吧<br>2. 无主之地</p>
+<p>很早就买了，也晚了一段时间，看视频教程是刷到中间了，有段时间身体不舒服，有点晕，就放了，体验还是非常爽，没什么吐槽点，就是有点头晕，画风怪怪的<br>3. warframe</p>
+<p>好好说道说道这个游戏，这个游戏我一开始是玩国际服的（喷子来），不知道算不算毕业，反正所有战甲都体验了一遍，后期就断断续续A了，战甲一半是自己打的，一半奸商弄得，武器一开始也买，后期就直接固定了，懒得去弄其他的，现在好像又出了一些“无敌”的武器，看不懂，感觉以前的武器不吃香了，这也说明我实在是A太久了。。。<br>最近玩的都是国服，最终还是又A了下来，说到底，还是用玩国际服那套来玩国服，套路已经成熟了，但新号的原因，周边都是不怎么会的，要么就是速成鸡，很多基本的都不懂，然后还瞎指挥，好吧，国际服也有，然后就发现，国服好像太敏感了，对国际服这个，弄不懂，没什么利益冲突吧，我就是因为《网络连接无响应！》来了国服，被这些指指点点的跟非洲土狗一样的速成鸡给逼A了，算了，很多事情都有阶层、圈子，游戏是用来玩的，不想被恶心。<br>4. 还有一些游戏，以后再说吧。。。</p>
+]]></content>
+      <tags>
+        <tag>游戏 心得</tag>
+      </tags>
+  </entry>
 </search>

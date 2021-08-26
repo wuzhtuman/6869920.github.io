@@ -11,6 +11,28 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Easyconect网络问题</title>
+    <url>/2021/08/26/Easyconect%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="easyconnect失败后上不了网"><a href="#easyconnect失败后上不了网" class="headerlink" title="easyconnect失败后上不了网"></a>easyconnect失败后上不了网</h1><p>工作环境需要使用EC这个软件，每次使用完这个软件后，微信和qq的二维码便显示不出来，使用腾讯的华佗检测，显示qq.com等网址都是存在极大延迟</p>
+<span id="more"></span>
+
+<h6 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h6><p>直接对电脑进行网络重置，这是一个暴力解决的办法，后续如果找到更安全的解决方案会第一时间推送</p>
+<p>end</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>网络调试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo sidebar 404问题</title>
+    <url>/2021/07/28/hexo-sidebar-404%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>我们搭建完博客，使用next主题并配置好菜单栏的时候，点击日志会发现页面404</p>
+<span id="more"></span>
+<p>（404就是找不到该页面的报错）<br>我们查看网页浏览器的链接，发现该链接不正确，其实是Next主题的一个bug，我们需要修改一下源代码。<br>步骤如下：<br>1、找到源文件#<br>首先我们找到代码文件，目录为你的博客目录/themes/next/layout/_macro/sidebar.swig。<br>2、找到代码块#<br>找到&lt;a href=”url_for(theme.menu.archives).split(‘||’)[0] | trim “&gt;注释掉<br>然后回车再下面添加一行红色箭头的代码&lt;a href=”<a href="https://myblog.github.io/archives/&quot;">https://myblog.github.io/archives/&quot;</a> target=”_Self”&gt;，<br>修改完成后别忘了保存~~~保存后，运行以下命令<br>hexo clean<br>hexo d -g<br>最后清除一下浏览器缓存，再进你的博客时，发现日志POST页面可以成功访问了~~~</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/08/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -27,14 +49,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo sidebar 404问题</title>
-    <url>/2021/07/28/hexo-sidebar-404%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>我们搭建完博客，使用next主题并配置好菜单栏的时候，点击日志会发现页面404</p>
-<span id="more"></span>
-<p>（404就是找不到该页面的报错）<br>我们查看网页浏览器的链接，发现该链接不正确，其实是Next主题的一个bug，我们需要修改一下源代码。<br>步骤如下：<br>1、找到源文件#<br>首先我们找到代码文件，目录为你的博客目录/themes/next/layout/_macro/sidebar.swig。<br>2、找到代码块#<br>找到&lt;a href=”url_for(theme.menu.archives).split(‘||’)[0] | trim “&gt;注释掉<br>然后回车再下面添加一行红色箭头的代码&lt;a href=”<a href="https://myblog.github.io/archives/&quot;">https://myblog.github.io/archives/&quot;</a> target=”_Self”&gt;，<br>修改完成后别忘了保存~~~保存后，运行以下命令<br>hexo clean<br>hexo d -g<br>最后清除一下浏览器缓存，再进你的博客时，发现日志POST页面可以成功访问了~~~</p>
 ]]></content>
   </entry>
   <entry>
@@ -59,7 +73,7 @@
     <url>/2021/08/23/hexo%E9%83%A8%E7%BD%B2%E5%87%BA%E7%8E%B0%E5%88%86%E6%94%AF%E9%94%99%E8%AF%AF/</url>
     <content><![CDATA[<p>ssh密钥问题</p>
 <span id="more"></span>
-<p>输入git remote set-url origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>:名字/仓库名.git 命令后解决了</p>
+<p>输入git remote set-url origin <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>:名字/仓库名.git 命令后解决了</p>
 ]]></content>
   </entry>
   <entry>
